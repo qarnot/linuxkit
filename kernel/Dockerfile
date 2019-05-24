@@ -104,7 +104,7 @@ RUN set -e && \
     fi
 
 # Save kernel source
-RUN tar cJf /out/src/linux.tar.xz /linux
+RUN tar czf /out/src/linux.tar.gz /linux
 
 # Kernel config
 # The s390x defconfig moved with 5.2.x
