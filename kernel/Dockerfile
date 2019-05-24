@@ -102,7 +102,7 @@ RUN set -e && \
     fi
 
 # Save kernel source
-RUN tar cJf /out/src/linux.tar.xz /linux
+RUN tar czf /out/src/linux.tar.gz /linux
 
 # Kernel config
 RUN case $(uname -m) in \
