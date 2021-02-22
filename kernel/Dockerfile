@@ -39,6 +39,7 @@ ARG KERNEL_VERSION
 ARG KERNEL_SERIES
 ARG EXTRA
 ARG DEBUG
+ARG IGNORE_CONFIG_DIFF=true
 
 # We copy the entire directory. This copies some unneeded files, but
 # allows us to check for the existence /patches-${KERNEL_SERIES} to
@@ -134,7 +135,7 @@ RUN case $(uname -m) in \
     fi && \
     make defconfig && \
     make oldconfig && \
-    if [ -z "${EXTRA}" ] && [ -z "${DEBUG}" ]; then diff -u .config ${KERNEL_DEF_CONF}; fi
+    if [ -z "${EXTRA}" ] && [ -z "${DEBUG}" ] && [ -z "${IGNORE_CONFIG_DIFF}" ]; then diff -u .config ${KERNEL_DEF_CONF}; fi
 
 
 # Kernel
