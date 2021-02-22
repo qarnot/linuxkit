@@ -106,6 +106,7 @@ build_$(2)$(3)$(4): Dockerfile Makefile $(wildcard patches-$(2)/*) $(wildcard co
 			--build-arg EXTRA=$(3) \
 			--build-arg DEBUG=$(4) \
 			--build-arg BUILD_IMAGE=$(IMAGE_BUILDER) \
+			--build-arg IGNORE_CONFIG_DIFF=$(IGNORE_CONFIG_DIFF) \
 			$(LABELS) \
 			--no-cache -t $(ORG)/$(IMAGE):$(1)$(3)$(4)-$(TAG)$(SUFFIX) .
 
@@ -117,6 +118,7 @@ forcebuild_$(2)$(3)$(4): Dockerfile Makefile $(wildcard patches-$(2)/*) $(wildca
 		--build-arg EXTRA=$(3) \
 		--build-arg DEBUG=$(4) \
 		--build-arg BUILD_IMAGE=$(IMAGE_BUILDER) \
+		--build-arg IGNORE_CONFIG_DIFF=$(IGNORE_CONFIG_DIFF) \
 		$(LABELS) \
 		--no-cache -t $(ORG)/$(IMAGE):$(1)$(3)$(4)-$(TAG)$(SUFFIX) .
 
