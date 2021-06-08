@@ -1,7 +1,9 @@
 ARG BUILD_IMAGE
-ARG KERNEL_VERSIONS
 
 FROM ${BUILD_IMAGE} AS kernel-build
+
+ARG KERNEL_VERSIONS
+
 RUN apk add \
     argp-standalone \
     bison \
