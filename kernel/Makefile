@@ -268,7 +268,6 @@ else ifeq ($(ARCH),$(filter $(ARCH),aarch64 arm64))
 $(eval $(call kernel,5.12.14,5.12.x,$(EXTRA),$(DEBUG)))
 $(eval $(call kernel,5.10.47,5.10.x,$(EXTRA),$(DEBUG)))
 $(eval $(call kernel,5.11.4,5.11.x,-rt,))
-
 endif
 
 # Target for kernel config
