@@ -263,19 +263,19 @@ endef
 #
 ifeq ($(ARCH),x86_64)
 $(eval $(call kernel,5.11.22,5.11.x,$(EXTRA),$(DEBUG)))
-$(eval $(call kernel,5.10.42,5.10.x,$(EXTRA),$(DEBUG)))
-$(eval $(call kernel,5.10.42,5.10.x,,-dbg))
+$(eval $(call kernel,5.10.45,5.10.x,$(EXTRA),$(DEBUG)))
+$(eval $(call kernel,5.10.45,5.10.x,,-dbg))
 $(eval $(call kernel,5.4.121,5.4.x,$(EXTRA),$(DEBUG)))
 #$(eval $(call kernel,5.4.28,5.4.x,-rt,))
 
 else ifeq ($(ARCH),$(filter $(ARCH),aarch64 arm64))
 $(eval $(call kernel,5.11.22,5.11.x,$(EXTRA),$(DEBUG)))
-$(eval $(call kernel,5.10.42,5.10.x,$(EXTRA),$(DEBUG)))
+$(eval $(call kernel,5.10.45,5.10.x,$(EXTRA),$(DEBUG)))
 #$(eval $(call kernel,5.4.28,5.4.x,-rt,))
 
 else ifeq ($(ARCH),s390x)
 $(eval $(call kernel,5.11.22,5.11.x,$(EXTRA),$(DEBUG)))
-$(eval $(call kernel,5.10.42,5.10.x,$(EXTRA),$(DEBUG)))
+$(eval $(call kernel,5.10.45,5.10.x,$(EXTRA),$(DEBUG)))
 endif
 
 # Target for kernel config
