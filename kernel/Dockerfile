@@ -76,6 +76,7 @@ RUN set -e && \
         git clone ${UCODE_REPO} ucode && \
         cd ucode && \
         git checkout ${UCODE_COMMIT} && \
+        ( [ -d intel-ucode-with-caveats ] && cp intel-ucode-with-caveats/* intel-ucode/ ) && \
         iucode_tool --normal-earlyfw --write-earlyfw=/out/intel-ucode.cpio ./intel-ucode && \
         cp license /out/intel-ucode-license.txt && \
         mkdir -p /lib/firmware && \
