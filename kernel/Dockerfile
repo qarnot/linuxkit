@@ -32,6 +32,7 @@ RUN apk add \
     tar \
     xz \
     xz-dev \
+    python3 \
     zlib-dev
 
 ARG KERNEL_VERSION
