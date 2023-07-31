@@ -84,6 +84,10 @@ RUN set -e && \
         cp -rav ./intel-ucode /lib/firmware; \
     fi
 
+ENV AMD_UCODE_REPO=https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+RUN git clone "${AMD_UCODE_REPO}" && \
+    cp -rav ./linux-firmware/amd-ucode /lib/firmware
+
 
 WORKDIR /linux
 # Apply local specific patches if present
